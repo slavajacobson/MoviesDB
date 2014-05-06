@@ -1,0 +1,4 @@
+Add ability to view all the "hidden" videos
+Add ability to update existing video info with new one by submitting imdb link
+Show movie information
+Add ability to view TV series

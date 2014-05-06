@@ -1,0 +1,160 @@
+<div id="spinner_wrapper">
+	<img src="img/spinner.gif" alt="spinner" />
+</div>
+
+<div id="settings" class="reveal-modal">
+	<a class="close-reveal-modal">&#215;</a>
+
+	<h2>Settings</h2>
+
+	<form id="settings" class="custom">
+		<div class="row">
+			<div class="large-10 columns">
+				<input type="text" name="movies_folder" placeholder="Copy and paste the folder with your movies" value="<%= @movies_folder %>">
+			</div>
+			<div class="large-2 columns">
+				<input class="small button" type="submit" value="Save">
+			</div>
+		</div>
+		<div class="row">
+			<div class="large-12 columns">
+				<label>Delete all movies from Database</label>
+				<div id="clear_db" class="tiny button">
+					Do it!
+				</div>
+				<label>Delete all broken links</label>
+				<div id="delete_broken_links_button" class="tiny button">
+					Do it!
+				</div>
+				<label>Shutdown application</label>
+				<div id="exit_app_button" class="tiny button">
+					Do it!
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+
+
+
+<div class="panel" style="z-index:90; position:fixed; width:100%">
+
+	<form id="filter_movies" class="custom">
+		<div class="row">
+			<div class="large-4 columns">
+				<input name="title" type="text" placeholder="Movie's Title">
+			</div>
+			<div class="large-2 columns">
+				<input name="from_year" type="text" placeholder="From Year">
+			</div>
+			<div class="large-2 columns">
+				<input name="to_year" type="text" placeholder="To Year">
+			</div>
+			<div class="large-4 columns">
+				<select id="customDropdown1" class="medium" name="genre">
+					<option value="">Genre</option>
+					<option value="action">Action</option>
+					<option value="adventure">Adventure</option>
+					<option value="animation">Animation</option>
+					<option value="biography">Biography</option>
+					<option value="comedy">Comedy</option>
+					<option value="crime">Crime</option>
+					<option value="documentary">Documentary</option>
+					<option value="drama">Drama</option>
+					<option value="family">Family</option>
+					<option value="fantasy">Fantasy</option>
+					<option value="film-noir">Film-Noir</option>
+					<option value="game-show">Game-Show</option>
+					<option value="history">History</option>
+					<option value="horror">Horror</option>
+					<option value="musical">Musical</option>
+					<option value="mystery">Mystery</option>
+					<option value="reality-tv">Reality-TV</option>
+					<option value="romance">Romance</option>
+					<option value="sci-fi">Sci-Fi</option>
+					<option value="sport">Sport</option>
+					<option value="thriller">Thriller</option>
+					<option value="war">War</option>
+					<option value="western">Western</option>
+				</select>
+			</div>
+
+		</div>
+
+		<div class="row">
+			<div class="large-4 columns">
+				<input class="small button" type="reset" value="Clear" />
+				<input class="small button" type="submit" value="Search" />
+			</div>
+			<div class="large-4 columns">
+				<input name="actor" type="text" placeholder="Actor's name">
+			</div>
+			<div class="large-4 columns">
+				
+				<select id="customDropdown2" class="medium" name="mpaa_rating">
+					<option value="">MPAA Rating</option>
+					<option value="rated r for">R</option>
+					<option value="rated pg-13 for">PG13</option>
+					<option value="rated pg for">PG</option>
+				</select>
+			</div>
+		</div>
+
+	</form>
+</div>
+
+
+<div id="slide_panel" class="panel callout">
+	<div class="panel callout" id="slide_panel_button">
+		Movies Database
+	</div>
+	
+	<div class="row">
+		<div class="large-7 columns">
+			<div id="sync_movies_progress" class="progress success round"><span class="meter" style="width: 0%"></span></div>
+		</div>
+		<div class="large-3 columns">
+			<div id="sync_movies_button" class="small button">
+				Sync Movies
+			</div>
+			<div id="pause_sync_movies_button" class="small button">
+				Pause
+			</div>
+		</div>
+		<div class="large-2 columns">
+			<a href="#" data-reveal-id="settings" class="secondary button small">Settings</a>
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-12 columns">
+			<span id="sync_info">
+				<span class="radius secondary label">Completed: <span id="process_percentage"></span></span>
+				<span class="radius secondary label">
+					<span id="current_process_file"></span> of <span id="total_files_to_process"></span> files
+				</span>
+				<br/>
+				<span id="process_status" class="radius secondary label"></span>
+				<br/>
+				<span id="filename_processing" class="radius secondary label"></span>
+			</span>
+		</div>
+	</div>
+
+</div>
+
+
+
+
+
+<div id="content_wrapper">
+	<div class="row">
+		<div class="large-12 columns">
+			<div style="margin:0 auto; display:table;">
+				<h1>Movies Library</h1>
+			</div>
+		</div>
+	</div>
+
+	<ul id="movies_library"></ul>
+</div>
+

@@ -1,0 +1,1 @@
+ocra gui.rb --gem-full --windows --icon fav.ico views/

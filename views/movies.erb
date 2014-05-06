@@ -1,0 +1,26 @@
+<% @movies.each do |movie| %>
+
+	<li class="poster" data-id="<%= movie.id %>" class="movie_item">
+		<div class="poster_label">
+			<h6>
+				<%= "#{movie.name} (#{movie.year})" %>
+			</h6>
+		</div>
+		<% if movie.poster.nil? %>
+			<div class="poster_place_holder"> No Image </div>
+		<% else %>
+			<img src="data:image/png;base64,<%= base64_url(Dir.pwd + '/public/' + movie.poster) %>" alt="movie poster"/>
+		<% end %>
+
+		<div id="play_button" class="small button" data-id="<%= movie.id %>">
+			Watch
+		</div>
+		<a href="<%= (movie.url.nil? ? "http://www.imdb.com/find?q=#{movie.name}" : movie.url)  %>" target="_blank">
+			<div id="info_button" class="small button">
+				Info
+			</div>
+		</a>
+	</li>
+	
+
+<% end %>
